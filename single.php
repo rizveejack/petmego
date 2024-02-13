@@ -2,7 +2,7 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <div class="max-w-3xl mx-auto">
     <div class="flex flex-wrap gap-2 items-center py-3 text-sm">
-    <?php the_category( '&bull;' ); ?>
+    <?php function_exists('rank_math_the_breadcrumbs')? rank_math_the_breadcrumbs() : the_category( '&bull;' ); ?>
     </div>
 
         

@@ -5,7 +5,7 @@ if (!isset($args["context"])) {
 $cssClasses = $args["context"] !=='top'? "":"border-gray-200 border-t border-b";
 ?>
 
-<div class="py-2 flex items-center justify-between my-5 <?php echo $cssClasses?>">
+<div class="h-10 py-2 flex items-center justify-between my-5 <?php echo $cssClasses?>">
             <div class="flex space-x-4">
                 <div class="flex items-center space-x-2">
                     <img class="clap" src="<?php echo esc_url( get_template_directory_uri() . '/images/icons/icon-clap.svg' ); ?>" alt="clap" id="<?php echo get_the_ID(); ?>"/>
@@ -23,21 +23,21 @@ $cssClasses = $args["context"] !=='top'? "":"border-gray-200 border-t border-b";
                 <img src="<?php echo esc_url( get_template_directory_uri() . '/images/icons/icon-comment.svg' ); ?>" alt=""/>
             </div>
             <div class="flex items-center space-x-4">
-                <span>
+                <a target="_blank" href="https://api.whatsapp.com/send?text=<?php the_permalink(); ?>" >
                     <img src="<?php echo esc_url( get_template_directory_uri() . '/images/icons/icon-bookmark.svg' ); ?>" alt=""/>
-                </span>
-                <span data-attribute="<?php the_permalink(); ?>" id="popupLink" data-type="facebook">
+                </a>
+                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" id="popupLink" data-type="facebook">
                     <img src="<?php echo esc_url( get_template_directory_uri() . '/images/icons/icon-facebook.svg' ); ?>" alt=""/>
-                </span>
+                </a>
                 
-                <span data-attribute="<?php the_permalink(); ?>">
+                <a target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo get_the_excerpt(); ?>&url=<?php the_permalink(); ?>">
                     <img src="<?php echo esc_url( get_template_directory_uri() . '/images/icons/icon-twitter.svg' ); ?>" alt=""/>
-                </span>
-                <span data-attribute="<?php the_permalink(); ?>">
+                </a>
+                <a target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url=<?php the_permalink(); ?>">
                     <img src="<?php echo esc_url( get_template_directory_uri() . '/images/icons/icon-linkedin.svg' ); ?>" alt=""/>
-                </span>
-                <span data-attribute="<?php the_permalink(); ?>">
+                </a>
+                <a target="_blank" href="https://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo get_the_post_thumbnail_url(get_the_ID(),'full');?>&description=<?php echo get_the_excerpt(); ?>">
                     <img src="<?php echo esc_url( get_template_directory_uri() . '/images/icons/icon-link.svg' ); ?>" alt=""/>
-                </span>
+                </a>
             </div>
         </div>

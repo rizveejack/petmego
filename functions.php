@@ -20,7 +20,7 @@ add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form'
 
 
 function custom_theme_assets() {
-    
+    wp_enqueue_style( 'mainStyle', get_template_directory_uri() . '/style/main.css' );
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
     wp_enqueue_script( 'ajaxcalls', get_template_directory_uri() . '/js/ajax-calls.js', array('jquery'), '1.0', true);
     wp_localize_script( 'ajaxcalls', 'ajax_object', array(
